@@ -90,7 +90,7 @@ smmap==5.0.0
 soupsieve==2.4.1
 st-pages==0.4.1
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
-streamlit==1.22.0
+streamlit==1.37.0
 tenacity @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_0ew5sfng29/croot/tenacity_1682972282256/work
 toml==0.10.2
 toolz==0.12.0
