@@ -1,7 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+import streamlit as st
 import random
-
-app = Flask(__name__)
 
 # List of cities
 cities = [
@@ -29,26 +27,14 @@ cities = [
 
 selected_list = []
 
+st.title("City Selector")
 
-@app.route("/")
-def index():
-    return render_template("index.html", cities=cities)
+# Display checkboxes for city selection
+selected_list = st.multiselect("Select cities:", cities, [])
 
-
-@app.route("/select_cities", methods=["POST"])
-def select_cities():
-    global selected_list
-    selected_list = request.form.getlist("city")
-    return redirect(url_for("draw"))
-
-
-@app.route("/draw", methods=["GET", "POST"])
-def draw():
-    if request.method == "POST" and selected_list:
+if st.button("Draw a City"):
+    if selected_list:
         city = random.choice(selected_list)
-        return render_template("result.html", city=city)
-    return render_template("draw.html", selected_list=selected_list)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
+        st.write(f"The selected city is: **{city}**")
+    else:
+        st.write("No cities selected. Please select at least one city.")
