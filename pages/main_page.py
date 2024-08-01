@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-st.image("./../static/xinjiang.jpg", use_column_width=True)
+st.image("./static/xinjiang.jpg", use_column_width=True)
 st.markdown("# 大志's gadgets :sparkles:")
 st.divider()
 # st.sidebar.markdown("# Main page 🎈")
